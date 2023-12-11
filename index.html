@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome To My Portfolio</title>
+  <link id="favicon" rel="shortcut icon" href="dist/img/f.png" />
+  <link href="dist/output.css" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <script>
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+
+
+  </script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+
+    body {
+      font-family: "Poppins", sans-serif;
+      --sb-track-color: #2e3233;
+      --sb-thumb-color: #14b8a6;
+      --sb-size: 10px;
+
+      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+
+    body::-webkit-scrollbar {
+      width: var(--sb-size)
+    }
+
+    body::-webkit-scrollbar-track {
+      background: var(--sb-track-color);
+      border-radius: 10px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: var(--sb-thumb-color);
+      border-radius: 10px;
+
+    }
+
+    #transition {
+      transition: transform 0.9s ease-out-in;
+    }
+
+    #transition:hover {
+      transform: scale(1.1);
+    }
+
+    .transition {
+      transition: transform 0.9s ease-out-in;
+    }
+
+    .transition:hover {
+      transform: scale(1.1);
+    }
+
+    #bouncing-ball {
+      animation: bounce 3s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        top: 0;
+      }
+
+      50% {
+        top: calc(4vh - 3px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Start -->
+  <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
+    <div class="container">
+      <div class="relative flex items-center justify-between">
+        <div class="px-4">
+          <a href="https://www.linkedin.com/in/fajar-fauzian-153220277/"
+            class="block py-6 lg:text-3xl font-bold text-primary"><span class="text-orange-500">Zian</span>'s Only</a>
+        </div>
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+            <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+          </button>
+
+          <nav id="nav-menu"
+            class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent">
+            <ul class="block lg:flex">
+              <li class="group">
+                <a href="#home"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white">Home</a>
+              </li>
+              <li class="group">
+                <a href="#about"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white">About</a>
+              </li>
+              <li class="group">
+                <a href="#portfolio"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white">Portfolios</a>
+              </li>
+              <li class="group">
+                <a href="#skils"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white">Skills</a>
+              </li>
+              <li class="group">
+                <a href="#blog"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white">Blog</a>
+              </li>
+              <li class="group">
+                <a href="#contact"
+                  class="mx-8 flex transition duration-700 ease-in-out scale-105 py-2 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
+              </li>
+              <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                <div class="flex">
+                  <span class="mr-2 text-sm text-slate-500"><i data-feather="sun"></i></span>
+                  <input type="checkbox" class="hidden" id="dark-toggle" />
+                  <label for="dark-toggle">
+                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                      <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-500 ease-in-out">
+                      </div>
+                    </div>
+                  </label>
+                  <span class="ml-2 text-sm text-slate-500"><i data-feather="moon"></i></span>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header End -->
+
+  <!-- Hero Section Start -->
+  <section id="home" class="pb-32 pt-36 dark:bg-dark">
+    <div class="container ">
+      <div class="flex flex-wrap">
+        <div class="w-full self-center px-4 lg:w-1/2">
+          <h1 class=" font-semibold text-primary lg:text-4xl">
+            <div class=" flex-row">
+              <p class="flex text-2xl">
+                <img class="mr-3 mb-3" width="30" src="dist/img/waving-hand.gif" alt="">
+                Hey,
+              </p>
+            </div>
+            <span class="mt-1 mb-4 block font-bold text-dark dark:text-white lg:text-5xl">I'm Fajar <span
+                class="text-primary">Fau</span><span class=" text-primary dark:text-orange-600 lg:text-5xl">zian</span>
+            </span>
+          </h1>
+          <h2 class="mb-3 text-lg font-medium text-secondary lg:text-2xl">
+            I Focus on <span class="typing-text text-primary dark:text-orange-600"></span>
+          </h2>
+          <p class="mb-10 font-medium leading-relaxed text-secondary">
+            Learning web 🚀 programming is easy and fun,
+           <span class="font-bold text-dark dark:text-white"> right?!</span>
+          </p>
+          <a href=""
+            class="rounded-lg shadow-md shadow-cyan-500/50 bg-primary py-3 px-8 text-base font-semibold text-gray-950 transition duration-700 ease-in-out">Download
+            CV</a>
+        </div>
+        
+        <div class="w-full self-end px-4 lg:w-1/2">
+          <div class="relative mt-10 lg:right-0 lg:mt-9">
+            <img id="bouncing-ball" width="369" src="dist/img/hero.jpeg" alt="Fajar Fauzian"
+              class="ml-56 border-double border-4 shadow-orange-500 border-orange-500 shadow-xl origin-top-left rotate-12 duration-1000 cursor-pointer hover:shadow-lg transition rounded-xl relative z-10 mx-auto max-w-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section End -->
+
+  <!-- About Section Start -->
+  <section id="about" class="pt-36 pb-32 dark:bg-dark">
+    <div class="container">
+      <div class="flex flex-wrap">
+
+        <div class="w-full px-4 lg:w-1/2">
+          <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:pt-10 lg:text-3xl">
+            Mari berteman
+          </h3>
+          <p class="mb-6 text-base font-medium text-secondary lg:text-lg">
+            <img width="300"
+              class="opacity-20 shadow-primary shadow-lg hover:opacity-90 origin-bottom -rotate-12 transition duration-500 border-double border-4 border-primary rounded-xl ml-24 mt-14 mb-14"
+              src="dist/img/zian.jpg" alt="">
+            Hello, my name is <span class="text-primary">Fajar Fau<span class="text-orange-500">Zian</span></span>, you
+            can call me Fajar, I am <span class="text-primary">seventeen years old</span>, I live in Bogor, my hobbies
+            are playing games and singing
+            and drawing. My favorite food is fried chicken. <span class="text-primary"> I feel happy now</span>.
+          </p>
+          <div class="flex items-center">
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/Fajar Fauzian" target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+                data-feather="instagram"></i>
+            </a>
+
+            <!-- Twitter -->
+            <a href="https://twitter.com/Fajar Fauzian" target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+                data-feather="twitter"></i>
+            </a>
+
+            <!-- Github -->
+            <a href="https://github.com/fajarfauzian" target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+                data-feather="github"></i>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/Fajar Fauzian" target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+                data-feather="linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="mb-10 mt-5 w-full px-9 pr-24 lg:w-1/2">
+          <h4 class="mb-10 text-lg font-bold  uppercase text-primary">
+            About Me!
+          </h4>
+          <h2 class="mb-5 max-w-md text-3xl font-bold italic text-dark dark:text-white lg:text-4xl">
+            Yuk, belajar web Bareng Fajar Fau<span class="text-orange-500">zian!</span>
+          </h2>
+          <p class="max-w-xl mb-3 text-base font-medium text-secondary lg:text-lg">
+            I, a student at SMK Wikrama Bogor, am committed to majoring in software and game development. My main focus
+            at the moment is on Frontend, where I have explored some of the syntax of Javascript and PHP. Additionally,
+            I have knowledge of Vue.js for static website development and Laravel as a PHP framework. My experience in
+            creating website projects has enriched my understanding of the world of software development. I understand
+            the importance of dedicated team collaboration to create innovative products that are not only useful but
+            also enhance the user experience.
+          </p>
+          <div class="mt-20 flex dark:text-white text-1xl">
+            <p class="mb-2 pr-44"><span class="text-primary font-bold">Age : </span> 17 Years Old</p>
+            <p class="mb-2"><span class="text-primary font-bold">Phone : </span>(+62) 857-1024-9716</p>
+          </div>
+          <div class="mt-2 flex  dark:text-white text-1xl">
+            <p class="mb-2 pr-10"><span class="text-primary font-bold">Email : </span> fajarfauzian53@gmail.com</p>
+            <p class="mb-2"><span class="text-primary font-bold">Place : </span> Bogor, Indonesia - 16110</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+
+  <!-- Portfolio Section Start -->
+  <section id="portfolio" class="bg-slate-100 pt-36 pb-16 dark:bg-gray-950">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">Portfolio</h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
+            My Project
+          </h2>
+          <p class="text-md font-medium text-secondary md:text-lg">
+            This project was my project while I was in vocational school majoring in software and game development
+            (PPLG). </p>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
+
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img class="transition border-solid border-2 border-primary" src="dist/img/portfolio/personalweb.jpeg" alt="Landing Page" width="w-full" />
+          </div>
+          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
+            Personal Website
+          </h3>
+          <p class="text-base font-medium text-secondary">
+            This website was the first one I made to practice making a portfolio when I was in tenth grade, that website
+            is really good, isn't it?!
+          </p>
+          <div class="flex flex-grow">
+            <img class="transition" width="50" src="dist/img/skils/html-5--v1.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/css3.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/javascript--v1.webp" alt="">
+          </div>
+        </div>
+
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img class="transition border-solid border-2 border-primary" src="dist/img/portfolio/crudmvc.jpeg" alt="E-Commerce" width="w-full" />
+          </div>
+          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
+            CRUD
+          </h3>
+          <p class="text-base font-medium text-secondary">
+            This crud is an mvc crud that I made when I was in eleventh grade, using the PHP programming language.
+          </p>
+          <div class="flex flex-grow">
+            <img class="transition" width="50" src="dist/img/skils/html-5--v1.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/css3.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/php-logo.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/bootstrap.webp" alt="">
+          </div>
+        </div>
+
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img class="transition border-solid border-2 border-primary" src="dist/img/portfolio/landingpage.jpeg" alt="Technical Documentation"
+              width="w-full" />
+          </div>
+          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
+            landing Page
+          </h3>
+          <p class="text-base font-medium text-secondary">
+            The landing page is the one I made during the material with the industry, making it with the VueJS framework
+          </p>
+          <div class="flex flex-grow">
+            <img class="transition" width="50" src="dist/img/skils/html-5--v1.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/css3.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/vue-removebg-preview.png" alt="">
+          </div>
+        </div>
+
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img class="transition border-solid border-2 border-primary" src="dist/img/portfolio/LAPCUG.jpeg" alt="Tribute Page" width="w-full" />
+          </div>
+          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
+            UI lapCug E-Commerce
+          </h3>
+          <p class="text-base font-medium text-secondary">
+            This is an e-commerce user interface that I created with my team
+          </p>
+          <div class="flex flex-grow">
+            <img class="transition" width="50" src="dist/img/skils/figma.png" alt="">
+          </div>
+        </div>
+
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img class="transition border-solid border-2 border-primary" src="dist/img/portfolio/apotekapp.jpeg" alt="Tribute Page" width="w-full" />
+          </div>
+          <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
+            Apotek App
+          </h3>
+          <p class="text-base font-medium text-secondary">
+            This app pharmacy is my project when using the Laravel framework, this website is useful for app pharmacies
+            who want health services and smooth operations
+          </p>
+          <div class="flex flex-grow">
+            <img class="transition" width="50" src="dist/img/skils/html-5--v1.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/css3.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/php-logo.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/bootstrap.webp" alt="">
+            <img class="transition" width="50" src="dist/img/skils/laravel-removebg-preview.png" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Portfolio Section End -->
+
+  <!-- Skils Section Start -->
+  <section id="skils" class="bg-slate-800 pt-36 pb-32 dark:bg-slate-700">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">Skills</h4>
+          <h2 class="mb-4 text-3xl font-bold text-white dark:text-dark sm:text-4xl lg:text-5xl">
+            languages and Tools
+          </h2>
+          <p class="text-md font-medium dark:text-dark text-secondary md:text-lg">This is the programming language that
+            I have studied until now while I was studying software and game development (PPLG).</p>
+        </div>
+      </div>
+
+      <div class="w-full px-4">
+        <div class="flex flex-wrap items-center justify-center">
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/html-5--v1.webp" alt="HTML" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/css3.webp" alt="CSS" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/javascript--v1.webp" alt="JavaScript" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/figma.png" alt="Figma" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/bootstrap.webp" alt="Bootstrap" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/git.webp" alt="Git" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/github.webp" alt="Github" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img
+              src="dist/img/skils/external-netlify-a-cloud-computing-company-that-offers-hosting-and-serverless-backend-services-for-static-websites-logo-shadow-tal-revivo.webp"
+              alt="Netlify" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/php-logo.webp" alt="PHP" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/mysql-logo.webp" alt="MySQL" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/tailwindcss.webp" alt="TailwindCSS" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/laravel-removebg-preview.png" alt="Laravel" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/java-coffee-cup-logo--v1.webp" alt="Java" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/vue-removebg-preview.png" alt="VueJS" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/node-js.webp" alt="NodeJs" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/express-js.webp" alt="ExpressJs" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/sass.webp" alt="Sass" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+            <img src="dist/img/skils/google-logo.webp" alt="Googling" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Clients Section End -->
+
+  <!-- Blog Section Start -->
+  <section id="blog" class="bg-slate-100 pt-36 pb-32 dark:bg-dark">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">Blog</h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
+            Learning Materials
+          </h2>
+          <p class="text-md font-medium text-secondary md:text-lg">
+            I learned programming through the YouTube channel, because my type of learning is watching videos, so I
+            really enjoy learning through videos like on the programming channel.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap">
+        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-950">
+            <img src="dist/img/blog/wpu.jpeg" alt="Programming" class="w-full transition" />
+            <div class="py-8 px-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Web
+                  Programming Unpas</a>
+              </h3>
+              <p class="mb-6 text-base font-medium text-secondary">
+                Sandhika Galih, a teacher and content creator behind the UNPAS Web Programming YouTube channel, can be
+                the right example.
+              </p>
+              <a href="https://www.youtube.com/@sandhikagalihWPU"
+                class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Channels
+                Youtube</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-950">
+            <img src="dist/img/blog/kelasterbuka.jpeg" alt="Coffee" class="w-full transition" />
+            <div class="py-8 px-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Kelas
+                  Terbuka</a>
+              </h3>
+              <p class="mb-6 text-base font-medium text-secondary">
+                Open Class is a channel for programming techniques in general and computing and data processing
+                techniques in particular.</p>
+              <a href="https://www.youtube.com/@KelasTerbuka"
+                class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Channels
+                YouTube</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-950">
+            <img src="dist/img/blog/deaafrizal.jpeg" alt="Mechanical Keyboard" class="w-full transition" />
+            <div class="py-8 px-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Dea
+                  Afrizal</a>
+              </h3>
+              <p class="mb-6 text-base font-medium text-secondary">
+                Update Setiap Hari - Talk about Life, Tech & Fact. dea afrizal programming & tech youtube channel
+              </p>
+              <a href="https://www.youtube.com/@deaafrizal"
+                class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Channels
+                YouTube</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Blog Section End -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="pt-36 pb-32 dark:bg-gray-950">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">Get In Touch</h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
+            Contact Me
+          </h2>
+          <p class="text-md font-medium text-secondary md:text-lg">
+            contact me if you need me
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="container border-solid border-2 border-primary px-10 py-20 rounded-xl shadow-lg shadow-primary backdrop-blur-sm bg-white/5">
+        <h1 class="text-dark dark:text-white text-center font-semibold text-4xl mb-10">Form To Contact Me</h1>
+        <form class="px-5">
+          <div class="mb-4">
+            <label for="name" class="text-base font-bold text-primary">Nama</label>
+            <input type="text" id="name"
+              class="w-full rounded-md bg-gray-600 dark:backdrop-blur-sm dark:bg-white/10 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="text-base font-bold text-primary">Email</label>
+            <input type="email" id="email"
+              class="w-full rounded-md bg-gray-600 dark:backdrop-blur-sm dark:bg-white/10 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div class="mb-4">
+            <label for="message" class="text-base font-bold text-primary">Pesan</label>
+            <textarea id="message"
+              class="h-32 w-full rounded-md bg-gray-600 dark:backdrop-blur-sm dark:bg-white/10 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
+          </div>
+          <div>
+            <button
+              class="w-full rounded-lg bg-primary py-3 px-8 text-base font-semibold text-white duration-500 hover:opacity-80 hover:shadow-lg">
+              Kirim
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+  <!-- Footer Start -->
+  <footer class="bg-dark pt-24 pb-12">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="mb-12 w-full px-4 font-medium text-slate-300 md:w-1/3">
+          <h2 class="mb-5 text-4xl font-bold text-white">ZIAN</h2>
+          <h3 class="mb-2 text-2xl font-bold">Contact Me</h3>
+          <p>Fajar Fauzian@gmail.com</p>
+          <p>Jalan Raya Cigombong, Kec. Cigombong, Kabupaten Bogor, Jawa Barat, Indonesia</p>
+          <p>Bogor</p>
+        </div>
+        <div class="mb-12 w-full px-4 md:w-1/3">
+          <h3 class="mb-5 text-xl font-semibold text-white">
+            Contact Info
+          </h3>
+          <ul class="text-slate-300">
+            <li>
+              <a href="#" class="mb-3  flex flex-row text-base hover:text-primary"> <i class="mr-3"
+                  data-feather="phone"></i> +62
+                857-1024-9716</a>
+            </li>
+            <li>
+              <a href="#" class="mb-3  flex flex-row text-base hover:text-primary"> <i class="mr-3"
+                  data-feather="mail"></i>
+                fajarfauzian53@gmail.com</a>
+            </li>
+            <li>
+              <a href="#" class="mb-3  flex flex-row text-base hover:text-primary"> <i class="mr-3"
+                  data-feather="map-pin"></i>
+                Cigombong,Bogor, Indonesia - 16110</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mb-12 w-full px-4 md:w-1/3">
+          <h3 class="mb-5 text-xl font-semibold text-white">Quick Links</h3>
+          <ul class="text-slate-300">
+            <li>
+              <a href="#home" class="mb-3 inline-block text-base hover:text-primary">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="mb-3 inline-block text-base hover:text-primary">About Me</a>
+            </li>
+            <li>
+              <a href="#portfolio" class="mb-3 inline-block text-base hover:text-primary">Portfolios</a>
+            </li>
+            <li>
+              <a href="#skils" class="mb-3 inline-block text-base hover:text-primary">Skills</a>
+            </li>
+            <li>
+              <a href="#blog" class="mb-3 inline-block text-base hover:text-primary">Blog</a>
+            </li>
+            <li>
+              <a href="#contact" class="mb-3 inline-block text-base hover:text-primary">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="w-full border-t border-slate-700 pt-10">
+        <div class="mb-5 flex items-center justify-center">
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/Fajar Fauzian" target="_blank"
+            class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+              data-feather="instagram"></i>
+          </a>
+
+          <!-- Twitter -->
+          <a href="https://twitter.com/Fajar Fauzian" target="_blank"
+            class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+              data-feather="twitter"></i>
+          </a>
+
+          <!-- Github -->
+          <a href="https://github.com/fajarfauzian" target="_blank"
+            class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+              data-feather="github"></i>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/Fajar Fauzian" target="_blank"
+            class="mr-3 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"><i
+              data-feather="linkedin"></i>
+          </a>
+        </div>
+        <p class="text-center text-xs font-medium text-slate-500">
+          Designed With <span class="text-pink-500">❤️</span> By
+          <a href="https://instagram.com/Fajar Fauzian" target="_blank" class="font-bold text-primary">Fajar
+            Fauzian</a>, use
+          <a href="https://tailwindcss.com" target="_blank" class="font-bold text-sky-500">Tailwind CSS</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <!-- Back to top Start -->
+  <a href="#home"
+    class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
+    id="to-top">
+    <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span>
+  </a>
+  <!-- Back to top End -->
+
+  <script src="dist/js/script.js"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+
+</html>
