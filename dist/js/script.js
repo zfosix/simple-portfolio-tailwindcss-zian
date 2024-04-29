@@ -57,18 +57,18 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
 
 document.addEventListener('visibilitychange', function () {
   if (document.visibilityState === "visible") {
-      document.title = "Portfolio | Fajar Fauzian";
-      $("#favicon").attr("href", "dist/img/f.png");
+    document.title = "Portfolio | Fajar Fauzian";
+    $("#favicon").attr("href", "dist/img/f.png");
   } else {
-      document.title = "Come Back To Portfolio";
-      $("#favicon").attr("href", "dist/img/favhand.png");
+    document.title = "Come Back To Portfolio";
+    $("#favicon").attr("href", "dist/img/favhand.png");
   }
 });
 
 
 // <!-- Typing effect -->
 var typed = new Typed(".typing-text", {
-  strings: ["Front End Developer", "UI Design", "Web Development","Design Graphics", "Programmer"],
+  strings: ["Front End Developer", "UI Design", "Web Development", "Design Graphics", "Programmer"],
   loop: true,
   typeSpeed: 50,
   backSpeed: 25,
@@ -76,3 +76,25 @@ var typed = new Typed(".typing-text", {
 });
 
 
+if (
+  localStorage.theme === "dark" ||
+  (!("theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  document.documentElement.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark");
+}
+function showProjects() {
+  document.getElementById("projects").style.display = "flex";
+  document.getElementById("certificates").style.display = "none";
+  document.getElementById("projects-btn").classList.add('active');
+  document.getElementById("certificates-btn").classList.remove('active');
+}
+
+function showCertificates() {
+  document.getElementById("projects").style.display = "none";
+  document.getElementById("certificates").style.display = "flex";
+  document.getElementById("projects-btn").classList.remove('active');
+  document.getElementById("certificates-btn").classList.add('active');
+}

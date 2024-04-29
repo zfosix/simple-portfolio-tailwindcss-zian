@@ -12,30 +12,6 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script>
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    function showProjects() {
-      document.getElementById("projects").style.display = "flex";
-      document.getElementById("certificates").style.display = "none";
-      document.getElementById("projects-btn").classList.add('active');
-      document.getElementById("certificates-btn").classList.remove('active');
-    }
-
-    function showCertificates() {
-      document.getElementById("projects").style.display = "none";
-      document.getElementById("certificates").style.display = "flex";
-      document.getElementById("projects-btn").classList.remove('active');
-      document.getElementById("certificates-btn").classList.add('active');
-    }
-  </script>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
