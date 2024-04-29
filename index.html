@@ -8,6 +8,9 @@
   <title>Welcome To My Portfolio</title>
   <link id="favicon" rel="shortcut icon" href="dist/img/f.png" />
   <link href="dist/output.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -38,6 +41,13 @@
       border-radius: 6px;
 
     }
+
+    .font-zian {
+      font-family: "Jersey 15", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
 
     @supports not selector(::-webkit-scrollbar) {
       body {
@@ -84,9 +94,9 @@
   <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
     <div class="container mx-auto max-w-screen-xl">
       <div class="relative flex items-center justify-between">
-        <div class="px-5">
+        <div class="px-5 font-zian">
           <a href="https://www.linkedin.com/in/fajar-fauzian-153220277/"
-            class="block py-6 lg:text-3xl font-bold text-primary"><span class="text-orange-500">Zian</span>'s Only</a>
+            class="block py-6 lg:text-4xl text-primary"><span class="text-orange-500">Zian</span>'s Only</a>
         </div>
         <div class="flex items-center px-4">
           <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
